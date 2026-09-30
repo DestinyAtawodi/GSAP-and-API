@@ -5,8 +5,7 @@ import gsap from 'gsap'
 const Navbar = () => {
   return (
     <div>
-
-       
+    
     </div>
   )
 }
