@@ -4,10 +4,24 @@ import gsap from 'gsap'
 const Gsap_Section = () => {
   return (
     <div>
-       <div className='box w-full h-200 bg-blue-500'></div>
-       <div className='box w-full h-200 bg-yellow-500'></div>
-       <div className='box w-full h-200 bg-red-500'></div>
-       <div className='box w-full h-200 bg-pink-500'></div>
+       
+        <img src="https://res.cloudinary.com/kzekjix6/image/upload/v1790962122/Asian_model_screen1.avif" />
+   
+      
+        <img src="https://res.cloudinary.com/kzekjix6/image/upload/v1790962283/black_model_screen1.avif"/>
+    
+       
+        <img src="https://res.cloudinary.com/kzekjix6/image/upload/v1790962351/black_model_screen_2.avif"/>
+      
+       
+        <img src="https://res.cloudinary.com/kzekjix6/image/upload/v1790962402/longsleeve_model.avif"/>
+      
+      
+        <img src="https://res.cloudinary.com/kzekjix6/image/upload/v1790962449/Customizable_2.avif"/>
+      
+     
+        <img src="https://res.cloudinary.com/kzekjix6/image/upload/v1790962509/Asian_model_screen2.avif"/>
+      
     </div>
   )
 }

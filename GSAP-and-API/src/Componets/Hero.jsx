@@ -1,6 +1,8 @@
 import React from 'react'
+import gsap from 'gsap'
 
 const Hero = () => {
+ 
   return (
     <div>
         <div className='hero flex flex-col items-center justify-center h-screen bg-gray-800 text-white mt-1'>
