@@ -11,7 +11,9 @@ function App() {
 
         <section>
           <h1>GSAP and API</h1>
-          <p></p>
+          <p>api is the rule that defines how different software interact with eachother eg your website to automated weather dataopen weather<br />
+          types od api: graphql, restapi, soap, grpc</p>
+          <p> best case for web dev is restful api for now, uses http protocol to make requests. We can use postman to test api skill/ http request instead of building website</p>
         </section>
     
         <button
