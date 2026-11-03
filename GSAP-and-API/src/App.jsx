@@ -18,8 +18,10 @@ function App() {
           baseUrl/Endpoint-- url is link to api doc, endpoint is the specific data you want to get from the api eg /activity, /joke, /quote, /user. /filter. 
           query parameters-- baseurl/endpoint?query=value
           multiple query parameters-- baseurl/endpoint?query1=value1&query2=value2
-          path parameters-- baseurl/endpoint/{path-parameter} it is used to identify a specific resource in the api. eg /user/1234, /user/5678</p>
+          path parameters-- baseurl/endpoint/(path-parameter) it is used to identify a specific resource in the api. eg /user/1234, /user/5678
           http://bored-api.appbrewery.com</p>
+         <h1>JSON</h1>
+         <p>JavaScript Object Notation (JSON) is a way to format data that can be sent over internet in readable & efficient way. json packimg-- const jsonData = JSON.stringify(data);  json unpacking-- const data = JSON.parse(jsonData);</p>
         </section>
     
         <button
