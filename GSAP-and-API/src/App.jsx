@@ -9,12 +9,18 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(useGSAP,ScrollTrigger);
 
 const App = () => {
-  const [count, setCount] = useState(0)
+  const [price, setPrice] = useState()
+
+  useEffect(() => {
+    fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd")
+      .then(response => response.json())
+      .then(data => setPrice(data.bitcoin.usd))
+  }, [])
 
   return (
     <>
         <section>
-         <h1 className="bg-blue-500 text-white p-4"> ADEV Crypto Tracker</h1>
+         <h1 className="bg-blue-500 text-white p-4 text-2xl"> ADEV Crypto Tracker</h1>
         </section>
     
         <button
@@ -22,7 +28,7 @@ const App = () => {
           className="counter"
           onClick={() => setCount((count) => count + 1)}
         >
-          Count is {count}
+          btc is {price}
         </button>
      
     </>

@@ -13,4 +13,4 @@
          JSON
          JavaScript Object Notation (JSON) is a way to format data that can be sent over internet in readable & efficient way. json packimg-- const jsonData = JSON.stringify(data);  json unpacking-- const data = JSON.parse(jsonData);
          */
-import @tailwindcss from 'tailwindcss'
+@import "tailwindcss";
