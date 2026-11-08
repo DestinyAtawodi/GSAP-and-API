@@ -3,18 +3,23 @@ import { useEffect } from 'react'
 import './App.css'
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import Axios from 'axios';
     
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(useGSAP,ScrollTrigger);
+
+
 
 const App = () => {
   const [price, setPrice] = useState(0)
 
   useEffect(() => {
-    fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd")
-      .then(response => response.json())
-      .then(data => setPrice(data.bitcoin.usd))
+    Axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
+      .then((response) => {
+        setPrice(response.data.bitcoin.usd)
+      })
+      .catch((error) => {
+        console.error('Error fetching Bitcoin price:', error)
+      })
   }, [])
 
   return (
