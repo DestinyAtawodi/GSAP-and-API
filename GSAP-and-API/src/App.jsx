@@ -11,8 +11,8 @@ import Axios from 'axios';
 
 const App = () => {
   const [price, setPrice] = useState(0)
-
-  useEffect(() => {
+  const fetchPrice = () => {
+    useEffect(() => {
     Axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
       .then((response) => {
         setPrice(response.data.bitcoin.usd)
@@ -22,6 +22,8 @@ const App = () => {
       })
   }, [])
 
+  }
+  
   return (
     <>
         <section>
@@ -31,7 +33,7 @@ const App = () => {
         <button
           type="button"
           className="counter"
-          onClick={() => alert(`The current price of Bitcoin is $${price}`)}
+          onClick={fetchPrice}
         >
           btc is ${price}
         </button>
