@@ -11,12 +11,12 @@ import Axios from 'axios';
 
 const App = () => {
 const [name, setName] = useState("");
-
+const [predictedAge, setPredictedAge] = useState(null);
 
 const fetchAge = () => {
   Axios.get(`https://api.agify.io?name=${name}`)
   .then((response) => {
-    console.log(response.data);
+    setPredictedAge(response.data.age);
   })
   .catch((error) => {
     console.error('Error fetching age:', error);
@@ -39,7 +39,7 @@ const fetchAge = () => {
         >
           PREDICT AGE
         </button>
-        <h1>Predicted Age: </h1>
+        <h1>Predicted Age: {predictedAge}</h1>
      
     </>
   )
