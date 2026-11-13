@@ -10,33 +10,36 @@ import Axios from 'axios';
 
 
 const App = () => {
-  const [price, setPrice] = useState(0)
-  const fetchPrice = () => {
-    useEffect(() => {
-    Axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
-      .then((response) => {
-        setPrice(response.data.bitcoin.usd)
-      })
-      .catch((error) => {
-        console.error('Error fetching Bitcoin price:', error)
-      })
-  }, [])
+const [name, setName] = useState("");
 
-  }
+
+const fetchAge = () => {
+  Axios.get(`https://api.agify.io?name=${name}`)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.error('Error fetching age:', error);
+  });
+}
+
   
   return (
     <>
         <section>
-         <h1 className="bg-blue-500 text-white p-4 text-2xl"> ADEV Crypto Tracker</h1>
+         <h1 className="bg-blue-500 text-white p-4 text-2xl"> ADEV RANDOM AGE GUESS</h1>
         </section>
-    
+
+        <input type="text" placeholder="Enter your name" onChange={(e) => setName(e.target.value)} />
+        <br />
         <button
           type="button"
-          className="counter"
-          onClick={fetchPrice}
+          className="cursor-pointer bg-blue-500 text-white p-4 text-2xl rounded-lg hover:bg-blue-700 transition duration-300 mt-4"
+          onClick={fetchAge}
         >
-          btc is ${price}
+          PREDICT AGE
         </button>
+        <h1>Predicted Age: </h1>
      
     </>
   )
