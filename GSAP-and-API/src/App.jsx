@@ -10,38 +10,23 @@ import Axios from 'axios';
 
 
 const App = () => {
-const [name, setName] = useState("");
-const [predictedAge, setPredictedAge] = useState(null);
-
-const fetchAge = () => {
-  Axios.get(`https://api.agify.io?name=${name}`)
-  .then((response) => {
-    setPredictedAge(response.data.age);
+ const [generatedExcuse, SetGeneratedExcuse] = useState('')
+ const fetchExcuse = (excuse) => {
+  Axios.get(`https://excuser.herokuapp.com/v1/excuse/${excuse}/`).then((response) => {
+    SetGeneratedExcuse(response.data[0].excuse)
   })
-  .catch((error) => {
-    console.error('Error fetching age:', error);
-  });
-}
+ }
 
-  
   return (
-    <>
-        <section>
-         <h1 className="bg-blue-500 text-white p-4 text-2xl"> ADEV RANDOM AGE GUESS</h1>
-        </section>
-
-        <input type="text" placeholder="Enter your name" onChange={(e) => setName(e.target.value)} />
-        <br />
-        <button
-          type="button"
-          className="cursor-pointer bg-blue-500 text-white p-4 text-2xl rounded-lg hover:bg-blue-700 transition duration-300 mt-4"
-          onClick={fetchAge}
-        >
-          PREDICT AGE
-        </button>
-        <h1>Predicted Age: {predictedAge}</h1>
-     
-    </>
+    <div className="App">
+        <h1 className="text-2xl font-bold mb-4">Excuse Generator</h1>
+        <button onClick={() => fetchExcuse('family')} className="bg-blue-500 text-white p-2 rounded">Family</button>
+        <button onClick={() => fetchExcuse('office')} className="bg-blue-500 text-white p-2 rounded">Office</button>
+        <button onClick={() => fetchExcuse('children')} className="bg-blue-500 text-white p-2 rounded">Children</button>
+        <button onClick={() => fetchExcuse('college')} className="bg-blue-500 text-white p-2 rounded">College</button>
+        <button onClick={() => fetchExcuse('party')} className="bg-blue-500 text-white p-2 rounded">Party</button>
+        <h2 className="text-xl font-semibold mt-4">{generatedExcuse}</h2>
+    </div>
   )
 }
 
