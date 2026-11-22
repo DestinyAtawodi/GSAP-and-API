@@ -1,1 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+  color: #1d1d1f;
+  /* Mostly white now, with only a faint warm tint at the bottom */
+  background: linear-gradient(180deg, #ffffff 0%, #fbfaf6 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+/* The glassmorphism look: translucent white + blur + thin light border */
+.glass {
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+ 
+/* Keyboard focus stays visible */
+input:focus-visible,
+select:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #1d1d1f;
+  outline-offset: 2px;
+}
+ 
